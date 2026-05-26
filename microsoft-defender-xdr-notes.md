@@ -1,8 +1,8 @@
-# Microsoft Defender XDR — EDR Investigation & SOC Analyst Notes
+# Microsoft Defender XDR and EDR 
 
 Hello!
 This is my writeup on Microsft Defender XDR.
-Le's get Started:)
+Let's get Started :)
 
 ---
 
@@ -219,4 +219,4 @@ Microsoft Defender XDR's biggest advantage in an enterprise SOC is the **native 
 
 ---
 
-*These notes reflect structured study of Microsoft Defender XDR capabilities and SOC analyst workflows as part of preparing for enterprise endpoint detection and response roles.*
+
