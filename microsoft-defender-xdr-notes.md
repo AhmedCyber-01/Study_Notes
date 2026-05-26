@@ -1,11 +1,8 @@
 # Microsoft Defender XDR — EDR Investigation & SOC Analyst Notes
 
-**Author:** Mohammed Ahmed  
-**Category:** EDR | XDR | Endpoint Security | Incident Response  
-**Format:** Study Notes & SOC Workflow Analysis  
-**Date:** 2026
-
-> **Note:** These are structured study notes compiled while learning Microsoft Defender XDR for endpoint detection and response. This documents SOC analyst workflows, investigation techniques, and detection capabilities within the Microsoft security ecosystem.
+Hello!
+This is my writeup on Microsft Defender XDR.
+Le's get Started:)
 
 ---
 
