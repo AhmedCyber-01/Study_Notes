@@ -1,16 +1,28 @@
 # Microsoft Defender XDR and EDR 
 
 Hello!
-This is my writeup on Microsft Defender XDR.
+This is my writeup on Microsft Defender XDR and EDR.
 Let's get Started :)
+
+---
+
+## What is EDR?
+
+**EDR (Endpoint Detection and Response)** is a security solution that monitors and protects endpoint devices like laptops, desktops, servers, and company phones.
+
+Think of antivirus as a door lock, while EDR is like CCTV cameras and security guards that continuously watch everything happening inside the system.
+
+EDR detects suspicious activities such as unusual PowerShell commands, malware behavior, ransomware activity, file changes, and abnormal network connections. It helps security teams investigate attacks, view the attack timeline, alert analysts, and isolate infected devices if needed.
+
+For example, if cmd.exe launches PowerShell and downloads a malicious file, the EDR tool detects the suspicious behavior and raises an alert.
 
 ---
 
 ## What is Microsoft Defender XDR?
 
-**Microsoft Defender XDR (Extended Detection and Response)** is Microsoft's unified security platform that correlates signals across endpoints, identities, email, and cloud applications into a single investigation and response interface at `security.microsoft.com`.
+**Microsoft Defender XDR (Extended Detection and Response)** is Microsoft's unified security platform that correlates signals across endpoints, identities, email, and cloud applications into a single investigation and response interface.
 
-XDR solves a core SOC problem — analysts previously had to switch between multiple tools to investigate an incident. Defender XDR brings everything into one incident graph.
+XDR solves a core SOC problem which analysts previously had to switch between multiple tools to investigate an incident. Defender XDR brings everything into one incident graph.
 
 ---
 
@@ -36,7 +48,7 @@ As an L1 SOC analyst, the primary tools are **MDE** (for endpoint alerts) and th
 
 | Section | Purpose |
 |---|---|
-| **Incidents & Alerts** | Primary analyst workspace — all active incidents |
+| **Incidents & Alerts** | Primary analyst workspace  all active incidents |
 | **Hunting** | Advanced KQL-based threat hunting |
 | **Action Center** | Pending and completed remediation actions |
 | **Threat Intelligence** | Threat actor profiles, IOC management |
@@ -52,16 +64,16 @@ As an L1 SOC analyst, the primary tools are **MDE** (for endpoint alerts) and th
 The **Incident Queue** aggregates correlated alerts into incidents. Each incident shows:
 
 - **Severity** (High / Medium / Low / Informational)
-- **Incident name** — auto-generated description (e.g., "Multi-stage incident involving Initial access & Command and control")
-- **Impacted assets** — users, devices, mailboxes affected
-- **Detection source** — which Defender component detected it
-- **MITRE ATT&CK categories** — tactics mapped automatically
+- **Incident name:** auto-generated description (e.g., "Multi-stage incident involving Initial access & Command and control")
+- **Impacted assets:** users, devices, mailboxes affected
+- **Detection source:** which Defender component detected it
+- **MITRE ATT&CK categories:** tactics mapped automatically
 
 **Triage priority:** High severity → review impacted asset count → check if active (ongoing vs historical).
 
 ### Step 2: Incident Investigation
 
-Opening an incident reveals the **Attack Story** — an interactive graph showing:
+Opening an incident reveals the **Attack Story**  an interactive graph showing:
 - How the attack progressed across the kill chain
 - Which processes spawned which children
 - Network connections made during the attack
@@ -82,7 +94,7 @@ Key tabs inside an incident:
 
 For endpoint alerts, navigating to the impacted **device page** reveals:
 
-**Device Timeline** — chronological view of all events on the device:
+**Device Timeline:**  chronological view of all events on the device:
 - Process creation events (what ran and when)
 - Network connection events (what IPs were contacted)
 - File creation/modification events
@@ -123,7 +135,7 @@ MDE provides direct response actions from the portal — no need to physically a
 
 | Action | When to Use |
 |---|---|
-| **Isolate Device** | Active compromise — cut network access immediately |
+| **Isolate Device** | Active compromise  cut network access immediately |
 | **Run Antivirus Scan** | Suspected malware present |
 | **Collect Investigation Package** | Forensic data collection for L2/IR team |
 | **Restrict App Execution** | Block all non-Microsoft-signed executables |
@@ -155,10 +167,10 @@ Defender XDR automatically maps every alert to MITRE ATT&CK tactics and techniqu
 
 Defender XDR can automatically investigate alerts and take remediation actions. As an analyst, you review AIR results rather than doing everything manually:
 
-- **Automated investigation** — MDE investigates the alert, checks related entities, and determines verdict
+- **Automated investigation:** MDE investigates the alert, checks related entities, and determines verdict
 - **Verdict options:** Malicious / Suspicious / No threats found
-- **Pending actions** — some actions require analyst approval before execution (e.g., quarantine a file)
-- **Action Center** — where you approve or reject pending automated actions
+- **Pending actions:** some actions require analyst approval before execution (e.g., quarantine a file)
+- **Action Center:** where you approve or reject pending automated actions
 
 Key analyst task: Review AIR verdicts, approve legitimate remediation actions, override incorrect verdicts with justification.
 
@@ -212,10 +224,9 @@ Microsoft Defender XDR's biggest advantage in an enterprise SOC is the **native 
 
 ## Resources Used
 
-- Microsoft Learn: SC-200 — Mitigate threats using Microsoft Defender XDR
-- Microsoft Learn: SC-200 — Mitigate threats using Microsoft Defender for Endpoint
-- MITRE ATT&CK Framework — `attack.mitre.org`
-- Microsoft Security Blog — `microsoft.com/security/blog`
+- Microsoft Learn: SC-200 — https://learn.microsoft.com/en-us/training/paths/sc-200-mitigate-threats-using-microsoft-365-defender/
+- Microsoft Learn: SC-200 — https://learn.microsoft.com/en-us/training/pathssc-200-mitigate-threats-using-microsoft-defender-for-endpoint/
+
 
 ---
 
